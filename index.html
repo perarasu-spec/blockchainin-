@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriChain - Agricultural Supply Chain</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo">🌾 AgriChain</div>
+    <p>Blockchain-Based Agricultural Supply Chain</p>
+</header>
+
+<main>
+    <section class="card">
+        <h2>🔗 Blockchain Connection</h2>
+        <button id="connectWallet" onclick="connectWallet()">Connect MetaMask</button>
+        <p id="walletStatus">Wallet not connected</p>
+    </section>
+
+    <section class="card">
+        <h2>🌱 Register Agricultural Product</h2>
+        <form id="productForm">
+            <label>Product Name</label>
+            <input type="text" id="productName" placeholder="Example: Organic Rice" required>
+
+            <label>Crop Type</label>
+            <input type="text" id="cropType" placeholder="Example: Rice" required>
+
+            <label>Farmer Name</label>
+            <input type="text" id="farmerName" placeholder="Example: Ravi" required>
+
+            <label>Farm Location</label>
+            <input type="text" id="farmLocation" placeholder="Example: Tamil Nadu" required>
+
+            <button type="submit">Register Product</button>
+        </form>
+        <p id="createStatus"></p>
+    </section>
+
+    <section class="card">
+        <h2>🚚 Update Supply Chain</h2>
+        <form id="movementForm">
+            <label>Product ID</label>
+            <input type="number" id="movementProductId" placeholder="Example: 1" required>
+
+            <label>Supply Chain Stage</label>
+            <select id="stage">
+                <option value="Distributor">Distributor</option>
+                <option value="Warehouse">Warehouse</option>
+                <option value="Transport">Transport</option>
+                <option value="Retailer">Retailer</option>
+            </select>
+
+            <label>Person / Organization</label>
+            <input type="text" id="movementPerson" placeholder="Example: ABC Distributors" required>
+
+            <label>Location</label>
+            <input type="text" id="movementLocation" placeholder="Example: Chennai" required>
+
+            <button type="submit">Add Supply Chain Record</button>
+        </form>
+        <p id="movementStatus"></p>
+    </section>
+
+    <section class="card">
+        <h2>🔍 Track Product</h2>
+        <div class="searchBox">
+            <input type="number" id="searchProductId" placeholder="Enter Product ID">
+            <button onclick="trackProduct()">Track</button>
+        </div>
+        <div id="productResult"></div>
+        <div id="history"></div>
+        <div id="qrcode"></div>
+    </section>
+</main>
+
+<footer>
+    <p>AgriChain | Blockchain for Agricultural Supply Chain</p>
+    <p>College Project Prototype</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
